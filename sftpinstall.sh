@@ -36,5 +36,3 @@ do
 done
 
 sudo bash -c 'echo "//$0.file.core.windows.net/$1 /home/sftpuser/ecom cifs nofail,vers=3.0,username=$0,password=$2,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab' $ACCOUNT $CONTAINER $STORAGEPASS
-
-sudo mount -a -t cifs //$ACCOUNT.file.core.windows.net/$CONTAINER /home/sftpuser/ecom -o vers=3.0,username=$ACCOUNT,password=$STORAGEPASS,dir_mode=0777,file_mode=0777,serverino
