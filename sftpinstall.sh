@@ -35,6 +35,6 @@ do
 	sleep 2
 done
 
-sudo bash -c 'echo "//$0.file.core.windows.net/$1	/home/sftpuser/ecom	cifs	nofail,vers=2.1,username=$0,password=$2,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab' $ACCOUNT $CONTAINER $STORAGEPASS
+sudo bash -c 'echo "//$0.file.core.windows.net/$1	/home/sftpuser/ecom	cifs	nofail,vers=3.0,username=$0,password=$2,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab' $ACCOUNT $CONTAINER $STORAGEPASS
 
 sudo mount -a
