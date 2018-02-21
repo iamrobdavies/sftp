@@ -21,13 +21,13 @@ sudo chown -R sftpuser:ftpaccess /sftp/ecom
 
 sudo sed -i '/Subsystem sftp/s/^/#/g' /etc/ssh/sshd_config
 
-echo $'\nSubsystem sftp internal-sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\nSubsystem sftp internal-sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
 echo "Match User sftpuser" | sudo tee --append /etc/ssh/sshd_config > /dev/null
-echo $'\tChrootDirectory /sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
-echo $'\tX11Forwarding no' | sudo tee --append /etc/ssh/sshd_config > /dev/null
-echo $'\tAllowTcpForwarding no' | sudo tee --append /etc/ssh/sshd_config > /dev/null
-echo $'\tForceCommand internal-sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
-echo $'\tPasswordAuthentication yes' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\tChrootDirectory /sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\tX11Forwarding no' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\tAllowTcpForwarding no' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\tForceCommand internal-sftp' | sudo tee --append /etc/ssh/sshd_config > /dev/null
+echo '\tPasswordAuthentication yes' | sudo tee --append /etc/ssh/sshd_config > /dev/null
 echo "Match all" | sudo tee --append /etc/ssh/sshd_config > /dev/null
 
 sudo systemctl restart ssh
